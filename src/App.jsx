@@ -10,6 +10,7 @@ function App() {
       presupuesto={presupuesto} 
       setPresupuesto={setPresupuesto}
       isValidPresupuesto={isValidPresupuesto}
+      setIsValidPresupuesto= {setIsValidPresupuesto}
       />
     </div>
   );

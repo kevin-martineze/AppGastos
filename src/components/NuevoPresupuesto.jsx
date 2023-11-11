@@ -1,18 +1,25 @@
 import { useState } from "react";
 import Mensaje from "./Mensaje";
+import PropTypes from 'prop-types';
 
-const nuevoPresupuesto = ({ presupuesto, setPresupuesto }) => {
-  const [ mensaje, setMensaje ] = useState('')
+const NuevoPresupuesto = ({
+  presupuesto,
+  setPresupuesto,
+  setIsValidPresupuesto,
+}) => {
+  
+  const [mensaje, setMensaje] = useState("");
 
   const handlePresupuesto = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    if (!Number(presupuesto) || Number(presupuesto) < 0){
-      setMensaje('No es un presupuesto valido')
-      return
+    if (!presupuesto || presupuesto < 0) {
+      setMensaje("No es un presupuesto valido");
+      return;
     }
-    setMensaje('')
-  }
+    setMensaje("");
+    setIsValidPresupuesto(true);
+  };
 
   return (
     <div className="contenedor-presupuesto contenedor sombra">
@@ -34,4 +41,12 @@ const nuevoPresupuesto = ({ presupuesto, setPresupuesto }) => {
   );
 };
 
-export default nuevoPresupuesto;
+// PROPS
+
+  NuevoPresupuesto.propTypes = {
+    presupuesto: PropTypes.number.isRequired,
+    setPresupuesto: PropTypes.number.isRequired,
+    setIsValidPresupuesto: PropTypes.number.isRequired,
+  }
+
+export default NuevoPresupuesto;
