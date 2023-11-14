@@ -1,11 +1,11 @@
 import { useState } from "react";
 import Mensaje from "./Mensaje";
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 const NuevoPresupuesto = ({
   presupuesto,
   setPresupuesto,
-  setIsValidPresupuesto,
+  setIsValidPresupuesto
 }) => {
   
   const [mensaje, setMensaje] = useState("");
@@ -17,7 +17,7 @@ const NuevoPresupuesto = ({
       setMensaje("No es un presupuesto valido");
       return;
     }
-    setMensaje("");
+    setMensaje('');
     setIsValidPresupuesto(true);
   };
 
@@ -42,11 +42,10 @@ const NuevoPresupuesto = ({
 };
 
 // PROPS
-
-  NuevoPresupuesto.propTypes = {
-    presupuesto: PropTypes.number.isRequired,
-    setPresupuesto: PropTypes.number.isRequired,
-    setIsValidPresupuesto: PropTypes.number.isRequired,
-  }
+  // NuevoPresupuesto.propTypes = {
+  //   presupuesto: PropTypes.number.isRequired,
+  //   setPresupuesto: PropTypes.number.isRequired,
+  //   setIsValidPresupuesto: PropTypes.number.isRequired,
+  // }
 
 export default NuevoPresupuesto;
