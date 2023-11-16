@@ -21,7 +21,7 @@ const ControlPresupuesto = ({ gastos, presupuesto }) => {
       ((presupuesto - totalDisponible) / presupuesto) *
       100
     ).toFixed(2);
-    console.log(nuevoPorcentaje);
+    // console.log(nuevoPorcentaje);
 
     // console.log(totalDisponible)
     setDisponible(totalDisponible);
